@@ -1,5 +1,5 @@
 {
-  "name": "Persisting_data_with_MongoDB",
+  "name": "Persisting data with MongoDB",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
