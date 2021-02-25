@@ -1,5 +1,5 @@
 {
-  "name": "Persisting data with MongoDB",
+  "name": "food-backend",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
