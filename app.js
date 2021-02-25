@@ -36,6 +36,7 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: 'https://food-admin-client.herokuapp.com/',
+    credentials: true,
   }),
 );
 app.use(
