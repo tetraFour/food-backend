@@ -1,0 +1,63 @@
+<% include ../_header.ejs %>
+
+<div class="slider-wrap no-slanted">
+    <div class="slider-item" style="background-image: url('img/hero_1.jpg');">
+
+        <div class="container">
+            <div class="row slider-text align-items-center justify-content-center">
+                <div class="col-md-8 text-center col-sm-12 ">
+                    <h1>Корзина</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="clearfix mb-5 pb-5 mt-5">
+    <div class="row" >
+        <div class="col-md-6 text-center heading-wrap m-auto">
+            <% if(basket.length) { %>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">наименование</th>
+                    <th scope="col">пользователь</th>
+                    <th scope="col">время заказа</th>
+                    <th scope="col">время приготовления</th>
+                    <th scope="col">можно забарать до</th>
+                    <th scope="col">цена</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% basket.forEach(function (bskt, id) {%>
+                    <tr>
+                        <th><%= id+1%></th>
+                        <td><%= bskt.productId.name %></td>
+                        <td><%= bskt.userId.username %></td>
+                        <td><%= getHours(bskt.orderTime) %>:<%= getMinutes(bskt.orderTime)%></td>
+                        <td><%= getHours(bskt.orderTime)+2 %>:<%= getMinutes(bskt.orderTime)%></td>
+                        <td><%= getHours(bskt.orderTime)+3 %>:<%= getMinutes(bskt.orderTime)%></td>
+                        <td>
+                            <%if(bskt && bskt.productId && bskt.productId.price) {%>
+                                <%= bskt.productId.price %> p.</td>
+                            <%}%>
+                    </tr>
+                <%})%>
+                <tr>
+                    <td colspan="6">сумма</td>
+                    <td><%= finalPrice %> p.</td>
+                </tr>
+                </tbody>
+            </table>
+            <form action="/checkout" method="post">
+                <button class="btn btn-primary" type="submit">оформить заказ</button>
+            </form>
+            <% } else { %>
+                    <h2>корзина пуста!</h2>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<% include ../_footer.ejs %>

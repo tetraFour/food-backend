@@ -1,0 +1,108 @@
+<% if(products.length) { %>
+    <% products.forEach(function (product, id) {%>
+        <div class="sched d-block d-lg-flex to-basket mb-4">
+            <% if(currentUser) { %>
+                <% if(currentUser.role === 2 || currentUser.role === 3) { %>
+                    <a href="/product?id=<%= product.id%>">
+                        <div class="bg-image to-basket-image blur" style="background-image: url(<%= product.imageUrl %>); min-width: 555px; min-height: 100%" data-aos="fade"></div>
+                    </a>
+                <%  %>
+                <% } else { %>
+                <div class="bg-image to-basket-image blur" style="background-image: url(<%= product.imageUrl %>);" data-aos="fade"></div>
+                <% } %>
+            <% } else { %>
+                <div class="bg-image to-basket-image blur" style="background-image: url(<%= product.imageUrl %>);" data-aos="fade"></div>
+            <% } %>
+            <div class="text" style="display: flex; flex-direction: column">
+                <h3><%= product.name %></h3>
+                <p><%= product.restaurantId.name %></p>
+                <p><%= product.restaurantId.site %></p>
+                <p class="text-primary h4" style="text-decoration: line-through"> <%= product.price %> руб.</p>
+                <p class="text-primary h3" style="margin-top: 0"> <%= (Number(product.price) / 100 * 60).toFixed(1) %> руб.</p>
+                <p class="text-primary h2" style="padding: 0 5px; margin-top: 0; align-self: flex-start; color: #ffffff !important; background: #ff7404!important">
+                    -40%
+                </p>
+            <% if(!currentUser) { %>
+                    <p class="text-danger h5">зарегистрируйтесь или войдите для оформления заказа</p>
+                <% } %>
+                <% if(currentUser) { %>
+                    <% if(currentUser.role ) {%>
+                        <% if(currentUser.role === 1) {%>
+                            <form action="/add-to-basket?user=<%= currentUser._id %>&product=<%= product._id%>" method="post" style="margin-left: auto">
+                                <button type="submit" style="border: none; background: none"><img src="img/shopping-cart.svg" alt="" class="basket-image-button"></button>
+                            </form>
+                <%} } }%>
+                <% if(currentUser) { %>
+                    <% if(currentUser.role === 2 || currentUser.role === 3) { %>
+                        <form action="/food/<%= product._id%>" method="post" style="margin-left: auto">
+                            <button class="btn btn-danger" type="submit">удалить</button>
+                        </form>
+                <% } } %>
+            </div>
+
+        </div>
+    <%})%>
+<% } else {%>
+    <div class="col-md-12 text-center heading-wrap">
+        <h2>Товаров пока нет!</h2>
+    </div>
+<% } %>
+<% if(currentUser) { %>
+    <% if(currentUser.role === 2 || currentUser.role === 3) { %>
+    <div class="col-md-12 text-center heading-wrap">
+        <h2>добавить товар</h2>
+    </div>
+    <form action="/add-food" method="post">
+        <div class="form-group">
+            <label for="exampleInputEmail1">навзание продукта</label>
+            <input type="text" name="foodname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="продукт">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">цена продукта</label>
+            <input type="text" name="foodprice" class="form-control" id="exampleInputPassword1" placeholder="цена">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword2">картинка</label>
+            <input type="text" name="url" class="form-control" id="exampleInputPassword2" placeholder="http(s)://...">
+        </div>
+        <%if(currentUser.role === 2) { %>
+            <% restaurants.forEach(function (rest, id) { %>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="restaurant" id="exampleRadios<%= id%>" value="<%= rest.id %>">
+                    <label class="form-check-label" for="exampleRadios<%= id%>">
+                        <%= rest.name %>
+                    </label>
+                </div>
+            <% }) %>
+        <% } %>
+        <% if(currentUser.role === 3) { %>
+            <div class="form-check" style="display: none">
+                <input class="form-check-input" type="radio" name="restaurant" id="exampleRadios123123" value="<%= currentUser._id %>">
+                <label class="form-check-label" for="exampleRadios123123">
+
+                </label>
+            </div>
+        <% } %>
+        <br>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="type" id="exampleRadios111" value="food" checked>
+            <label class="form-check-label" for="exampleRadios111">
+                еда
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="type" id="exampleRadios222" value="bakery">
+            <label class="form-check-label" for="exampleRadios222">
+                выпечка
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="type" id="exampleRadios333" value="coffee">
+            <label class="form-check-label" for="exampleRadios333">
+                напитки
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary">добавить товар</button>
+    </form>
+    <% } %>
+<% } %>

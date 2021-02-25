@@ -1,0 +1,404 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Real-Food-Saving &mdash; </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Gem style -->
+    <script src="js/modernizr.js"></script> 
+    <!-- Modernizr -->
+    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    
+    <header role="banner">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">Real-Food-Saving</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarsExample05">
+            <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
+              <li class="nav-item">
+                <a class="nav-link " href="index.html">Главная</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="recipes.html">Recipes</a>
+              </li> -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="services.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Заказать</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="food.html">Еда</a>
+                  <a class="dropdown-item" href="drinks.html">Напитки</a>
+                  <a class="dropdown-item" href="backery.html">Выпечка</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">Подробнее</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="news.html">Новости</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="contact.html">Контакты</a>
+              </li>
+              <nav class="main-nav">
+                <ul>
+                  <!-- inser more links here -->
+                  <li><a class="cd-signin nav-link" href="#0">Войти</a></li>
+                  <li><a class="cd-signup nav-link" href="#0">Зарегистрироваться</a></li>
+                </ul>
+              </nav>
+              </ul>
+            </ul>
+
+            <div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
+              <div class="cd-user-modal-container"> 
+                <ul class="cd-switcher">
+                  <li><a href="#0">Войти</a></li>
+                  <li><a href="#0">Создать аккаунт</a></li>
+                </ul>
+          
+                <div id="cd-login"> <!-- log in form -->
+                  <form class="cd-form">
+                    <p class="fieldset">
+                      <label class="image-replace cd-email" for="signin-email">E-mail</label>
+                      <input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
+                      <span class="cd-error-message">Ошибка!</span>
+                    </p>
+          
+                    <p class="fieldset">
+                      <label class="image-replace cd-password" for="signin-password">Password</label>
+                      <input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Пароль">
+                      <a href="#0" class="hide-password">Скрыть</a>
+                      <span class="cd-error-message">Ошибка!</span>
+                    </p>
+          
+                    <p class="fieldset">
+                      <input type="checkbox" id="remember-me" checked>
+                      <label for="remember-me">Запомнить меня</label>
+                    </p>
+          
+                    <p class="fieldset">
+                      <input class="full-width" type="submit" value="Войти">
+                    </p>
+                  </form>
+                  
+                  <p class="cd-form-bottom-message"><a href="#0">Забыли пароль?</a></p>
+                  <!-- <a href="#0" class="cd-close-form">Close</a> -->
+                </div> <!-- cd-login -->
+          
+                <div id="cd-signup"> <!-- sign up form -->
+                  <form class="cd-form">
+                    <p class="fieldset">
+                      <label class="image-replace cd-username" for="signup-username">Имя пользователя</label>
+                      <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Имя пользователя">
+                      <span class="cd-error-message">Ошибка!</span>
+                    </p>
+          
+                    <p class="fieldset">
+                      <label class="image-replace cd-email" for="signup-email">E-mail</label>
+                      <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+                      <span class="cd-error-message">Ошибка!</span>
+                    </p>
+          
+                    <p class="fieldset">
+                      <label class="image-replace cd-password" for="signup-password">Пароль</label>
+                      <input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Пароль">
+                      <a href="#0" class="hide-password">Скрыть</a>
+                      <span class="cd-error-message">Ошибка!</span>
+                    </p>
+          
+                    <p class="fieldset">
+                      <input type="checkbox" id="accept-terms">
+                      <label for="accept-terms">Я согласен с<a href="#0"> Условиями</a></label>
+                    </p>
+          
+                    <p class="fieldset">
+                      <input class="full-width has-padding" type="submit" value="Создать аккаунт">
+                    </p>
+                  </form>
+          
+                  <!-- <a href="#0" class="cd-close-form">Close</a> -->
+                </div> <!-- cd-signup -->
+          
+                <div id="cd-reset-password"> <!-- reset password form -->
+                  <p class="cd-form-message">Забыли пароль? Пожалуйста введите адрес Вашей электронной почты. На указанный адрес будет отправлена ссыкла для сброса пароля.</p>
+          
+                  <form class="cd-form">
+                    <p class="fieldset">
+                      <label class="image-replace cd-email" for="reset-email">E-mail</label>
+                      <input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+                      <span class="cd-error-message">Ошибка!</span>
+                    </p>
+          
+                    <p class="fieldset">
+                      <input class="full-width has-padding" type="submit" value="Сбросить пароль">
+                    </p>
+                  </form>
+          
+                  <p class="cd-form-bottom-message"><a href="#0">Назад, чтобы войти</a></p>
+                </div> <!-- cd-reset-password -->
+                <a href="#0" class="cd-close-form">Закрыть</a>
+              </div> <!-- cd-user-modal-container -->
+            </div> <!-- cd-user-modal -->
+            
+          </div>
+        </div>
+      </nav>
+      
+    </header>
+    <!-- END header -->
+    
+
+      <section class="home-slider owl-carousel">
+
+        <div class="slider-item" style="background-image: url('img/hero_1.jpg');">
+          
+          <div class="container">
+            <div class="row slider-text align-items-center justify-content-center">
+              <div class="col-md-8 text-center col-sm-12 ">
+                <h1>Только ты можешь ее спасти</h1>
+                <!-- <p class="mb-5" data-aos="fade-up" data-aos-delay="100">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente et sed quasi.</p> -->
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- <div class="slider-item" style="background-image: url('img/hero_2.jpg');">
+          <div class="container">
+            <div class="row slider-text align-items-center justify-content-center">
+              <div class="col-md-8 text-center col-sm-12 ">
+                <h1 >Delecious Food</h1>
+                <p class="mb-5" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente et sed quasi.</p>
+                <p><a href="#" class="btn btn-white btn-outline-white">Начать</a></p>
+              </div>
+            </div>
+          </div> -->
+          
+        </div>
+
+      </section>
+    <!-- END slider -->
+    </div> 
+    
+
+    <section class="section py-5">
+      <div class="container">
+        <div class="container mb-5">
+          <div class="row justify-content-center">
+              <div class="col-md-6 mb-4 mb-lg-0 col-lg-3 text-left service-block" >
+                <span class="wrap-icon"><span class="flaticon-dinner d-block mb-4"></span></span>
+                <h3><a class="navbar-brand" href="food.html" target=_blank >ЕДА</a></h3>
+              </div>
+              <div class="col-md-6 mb-4 mb-lg-0 col-lg-3 text-left service-block">
+                <span class="wrap-icon"><span class="flaticon-hot-coffee-rounded-cup-on-a-plate-from-side-view d-block mb-4"></span></span>
+                <h3><a class="navbar-brand" href="drinks.html" target=_blank >НАПИТКИ</a></h3>
+              </div>
+              <div class="col-md-6 mb-4 mb-lg-0 col-lg-3 text-left service-block" >
+                <span class="wrap-icon"><span class="flaticon-hot-coffee-rounded-cup-on-a-plate-from-side-view d-block mb-4"></span></span>
+                <h3><a class="navbar-brand" href="bakery.html" target=_blank >ВЫПЕЧКА</a></h3>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+      <!-- <div class="clearfix mb-5 pb-5">
+          <div class="row" >
+            <div class="col-md-12 text-center heading-wrap">
+              <h2>Каталог</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        
+        <div class="row no-gutters">
+          <div class="col-md-6">
+            <div class="sched d-block d-lg-flex">
+              <div class="bg-image order-2" style="background-image: url('img/dishes_4.jpg');" data-aos="fade"></div>
+              <div class="text order-1">
+                <h3>Grilled Caesar salad, shaved reggiano</h3>
+                <p class="text-primary h3">$12.00</p>
+              </div>
+              
+            </div>
+
+            <div class="sched d-block d-lg-flex">
+              <div class="bg-image" style="background-image: url('img/dishes_1.jpg');" data-aos="fade"></div>
+              <div class="text">
+                <h3>Spicy Calamari and beans</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                <p class="text-primary h3">$12.00</p>
+                
+              </div>
+              
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+            <div class="sched d-block d-lg-flex">
+              <div class="bg-image order-2" style="background-image: url('img/dishes_2.jpg');" data-aos="fade"></div>
+              <div class="text order-1">
+                <h3>Bacon wrapped wild gulf prawns</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                <p class="text-primary h3">$18.00</p>
+                
+              </div>
+              
+            </div>
+
+            <div class="sched d-block d-lg-flex">
+              <div class="bg-image" style="background-image: url('img/dishes_3.jpg');" data-aos="fade"></div>
+              <div class="text">
+                <h3>Seared ahi tuna fillet*, honey-ginger sauce</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                <p class="text-primary h3">$16.00</p>
+                
+              </div>
+              
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row no-gutters">
+          <div class="col-md-6">
+            <div class="sched d-block d-lg-flex">
+              <div class="bg-image order-2" style="background-image: url('img/dishes_4.jpg');" data-aos="fade"></div>
+              <div class="text order-1">
+                <h3>Grilled Caesar salad, shaved reggiano</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                <p class="text-primary h3">$12.00</p>
+              </div>
+              
+            </div>
+
+            <div class="sched d-block d-lg-flex">
+              <div class="bg-image" style="background-image: url('img/dishes_1.jpg');" data-aos="fade"></div>
+              <div class="text">
+                <h3>Spicy Calamari and beans</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                <p class="text-primary h3">$12.00</p>
+                
+              </div>
+              
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+            <div class="sched d-block d-lg-flex">
+              <div class="bg-image order-2" style="background-image: url('img/dishes_2.jpg');" data-aos="fade"></div>
+              <div class="text order-1">
+                <h3>Bacon wrapped wild gulf prawns</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                <p class="text-primary h3">$18.00</p>
+                
+              </div>
+              
+            </div>
+
+            <div class="sched d-block d-lg-flex">
+              <div class="bg-image" style="background-image: url('img/dishes_3.jpg');" data-aos="fade"></div>
+              <div class="text">
+                <h3>Seared ahi tuna fillet*, honey-ginger sauce</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                <p class="text-primary h3">$16.00</p>
+                
+              </div>
+              
+            </div>
+
+          </div>
+        </div>
+        
+
+      </div> -->
+    </section> <!-- .section -->
+
+   
+
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container mb-5">
+      </div>
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-4 mb-5">
+            <h3>О нас</h3>
+            <p class="mb-5">////////</p>
+            <ul class="list-unstyled footer-link d-flex footer-social">
+              <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
+              <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
+              <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>
+              <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
+            </ul>
+
+          </div>
+          <div class="col-md-5 mb-5">
+            <div class="mb-5">
+              <h3>Режим работы</h3>
+              <p><strong class="d-block font-weight-normal text-black">Ежедневно</strong>7:00-02:00</p>
+            </div>
+            <div>
+              <h3>Контактная информация</h3>
+            </div>
+          </div>
+          <div class="col-md-3">
+          
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 text-md-center text-left">
+            <p>
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> by @Victoria Tishkovskaya 
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#cf1d16"/></svg></div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/aos.js"></script>
+
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/magnific-popup-options.js"></script>
+    
+
+    <script src="js/main.js"></script>
+    
+  </body>
+</html>

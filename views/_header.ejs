@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    />
+    <title>Real-Food-Saving &mdash;</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+
+    <link
+      href="http://fonts.googleapis.com/css?family=PT+Sans:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <!-- CSS reset -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Gem style -->
+    <script src="js/modernizr.js"></script>
+    <!-- Modernizr -->
+    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css" />
+    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header role="banner">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="/">Real-Food-Saving</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarsExample05"
+            aria-controls="navbarsExample05"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarsExample05">
+            <ul
+              class="navbar-nav ml-auto pl-lg-5 pl-0"
+              style="display: flex; align-items: center"
+            >
+              <li class="nav-item">
+                <a class="nav-link" href="/">Главная</a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="/"
+                  id="dropdown04"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  style="display: flex; align-items: center"
+                  >Заказать</a
+                >
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="/food-page">Еда</a>
+                  <a class="dropdown-item" href="/drink-page">Напитки</a>
+                  <a class="dropdown-item" href="/bakery-page">Выпечка</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about-page">Подробнее</a>
+              </li>
+              <nav class="main-nav" style="display: flex; align-items: center">
+                <% if (currentUser) { %>
+                <li style="display:flex; align-items: center">
+                    <% if (currentUser.role === 1) {%>
+                      <a href="/basket-page" class="nav-link" style="border: none">Корзина</a>
+                    <% } else if (currentUser.role === 2) { %>
+                      <a href="/tables-page" class="nav-link" style="border: none">таблица</a>
+                      <a href="/add-restaurant-page" class="nav-link" style="border: none">добавить ресторан</a>
+                  <% } %>
+                </li>
+                <li>
+                  <a href="/logout" class="nav-link" style="border: none"
+                    >Выйти</a
+                  >
+                </li>
+                <% } else { %>
+                <li style="margin-left: 0">
+                  <a class="cd-signin nav-link" href="#0">Войти</a>
+                </li>
+                <li style="margin-left: 0">
+                  <a class="cd-signup nav-link" href="#0">Зарегистрироваться</a>
+                </li>
+                <% } %>
+              </nav>
+            </ul>
+            <div class="cd-user-modal">
+              <!-- this is the entire modal form, including the background -->
+              <div class="cd-user-modal-container">
+                <ul class="cd-switcher">
+                  <li><a href="#0">Войти</a></li>
+                  <li><a href="#0">Создать аккаунт</a></li>
+                </ul>
+
+                <div id="cd-login">
+                  <form class="cd-form" action="/login" method="post">
+                    <p class="fieldset">
+                      <input
+                        class="full-width has-padding has-border"
+                        name="username"
+                        id="signin-username"
+                        type="text"
+                        placeholder="Имя пользователя"
+                        required
+                      />
+                      <!-- <input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail" required>  -->
+                      <span class="cd-error-message">Ошибка!</span>
+                    </p>
+
+                    <p class="fieldset">
+                      <label
+                        class="image-replace cd-password"
+                        for="signin-password"
+                        >Password</label
+                      >
+                      <input
+                        class="full-width has-padding has-border"
+                        name="password"
+                        id="signin-password"
+                        type="text"
+                        placeholder="Пароль"
+                        required
+                      />
+                      <a href="#0" class="hide-password">Скрыть</a>
+                      <span class="cd-error-message">Ошибка!</span>
+                    </p>
+                    <p class="fieldset">
+                      <button
+                        class="btn full-width"
+                        type="submit"
+                        value="Войти"
+                      >
+                        Войти
+                      </button>
+                    </p>
+                  </form>
+                </div>
+                <!-- cd-login -->
+
+                <div id="cd-signup">
+                  <!-- sign up form -->
+                  <form class="cd-form" action="/signup" method="post">
+                    <p class="fieldset">
+                      <label
+                        class="image-replace cd-username"
+                        for="signup-username"
+                        >Имя пользователя</label
+                      >
+                      <input
+                        class="full-width has-padding has-border"
+                        name="user"
+                        id="signup-username"
+                        type="text"
+                        placeholder="Имя пользователя"
+                      />
+                      <span class="cd-error-message">Ошибка!</span>
+                    </p>
+
+                    <p class="fieldset">
+                      <label class="image-replace cd-email" for="signup-email"
+                        >E-mail</label
+                      >
+                      <input
+                        class="full-width has-padding has-border"
+                        id="signup-email"
+                        name="email"
+                        type="email"
+                        placeholder="E-mail"
+                      />
+                      <span class="cd-error-message">Ошибка!</span>
+                    </p>
+
+                    <p class="fieldset">
+                      <label
+                        class="image-replace cd-password"
+                        for="signup-password"
+                        >Пароль</label
+                      >
+                      <input
+                        class="full-width has-padding has-border"
+                        name="pass"
+                        id="signup-password"
+                        type="text"
+                        placeholder="Пароль"
+                      />
+                      <a href="#0" class="hide-password">Скрыть</a>
+                      <span class="cd-error-message">Ошибка!</span>
+                    </p>
+                    <button type="button" class="btn btn-primary" id="btn-list-switch">администратор заведения</button>
+                    <div class="fieldset restaurant-list" id="rest-list">
+                      <% restaurants.forEach(function (restaurant, id) { %>
+                          <div class="form-check" style="display: flex; align-items: center">
+                            <input class="form-check-input" type="radio" name="restaurantname" id="exampleRadios<%= id%>" value="<%= restaurant.id %>">
+                            <label class="form-check-label" for="exampleRadios<%= id%>">
+                              <%= restaurant.name %>
+                            </label>
+                          </div>
+                      <% }) %>
+                    </div>
+                    <p class="fieldset">
+                      <button
+                              class="btn full-width has-padding"
+                              type="submit"
+                              value="Создать аккаунт"
+                      >
+                        Создать аккаунт
+                      </button>
+                    </p>
+                  </form>
+
+                  <!-- <a href="#0" class="cd-close-form">Close</a> -->
+                </div>
+                <!-- cd-signup -->
+
+                <div id="cd-reset-password">
+                  <!-- reset password form -->
+                  <p class="cd-form-message">
+                    Забыли пароль? Пожалуйста введите адрес Вашей электронной
+                    почты. На указанный адрес будет отправлена ссыкла для сброса
+                    пароля.
+                  </p>
+
+                  <form class="cd-form">
+                    <p class="fieldset">
+                      <label class="image-replace cd-email" for="reset-email"
+                        >E-mail</label
+                      >
+                      <input
+                        class="full-width has-padding has-border"
+                        id="reset-email"
+                        type="email"
+                        placeholder="E-mail"
+                      />
+                      <span class="cd-error-message">Ошибка!</span>
+                    </p>
+
+                    <p class="fieldset">
+                      <input
+                        class="full-width has-padding"
+                        type="submit"
+                        value="Сбросить пароль"
+                      />
+                    </p>
+                  </form>
+
+                  <p class="cd-form-bottom-message">
+                    <a href="#0">Назад, чтобы войти</a>
+                  </p>
+                </div>
+                <!-- cd-reset-password -->
+                <a href="#0" class="cd-close-form">Закрыть</a>
+              </div>
+              <!-- cd-user-modal-container -->
+            </div>
+            <!-- cd-user-modal -->
+          </div>
+        </div>
+      </nav>
+    </header>
+

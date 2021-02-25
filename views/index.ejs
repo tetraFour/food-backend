@@ -1,0 +1,84 @@
+<% include _header %>
+
+
+<section class="home-slider owl-carousel">
+
+    <div class="slider-item" style="background-image: url('img/hero_1.jpg');">
+
+      <div class="container">
+        <div class="row slider-text align-items-center justify-content-center">
+          <div class="col-md-8 text-center col-sm-12 ">
+            <h1>Только ты можешь ее спасти</h1>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+<!--    </div>-->
+
+  </section>
+<!--</div> -->
+
+
+<section class="section py-5">
+  <div class="container">
+    <div class="container mb-5">
+      <div class="row justify-content-center">
+          <div class="col-md-6 mb-4 mb-lg-0 col-lg-3 text-left service-block"
+               style="display: flex;flex-direction: column;align-items: center;">
+            <span class="wrap-icon"><span class="flaticon-dinner d-block mb-4"></span></span>
+            <h3><a class="navbar-brand" href="/food-page" style="margin-right: 0">ЕДА</a></h3>
+          </div>
+          <div class="col-md-6 mb-4 mb-lg-0 col-lg-3 text-left service-block"
+               style="display: flex;flex-direction: column;align-items: center;">
+            <span class="wrap-icon"><span class="flaticon-hot-coffee-rounded-cup-on-a-plate-from-side-view d-block mb-4"></span></span>
+            <h3><a class="navbar-brand" href="/drink-page" style="margin-right: 0">НАПИТКИ</a></h3>
+          </div>
+          <div class="col-md-6 mb-4 mb-lg-0 col-lg-3 text-left service-block"
+               style="display: flex;flex-direction: column;align-items: center;">
+            <span class="wrap-icon"><span class="flaticon-hot-coffee-rounded-cup-on-a-plate-from-side-view d-block mb-4"></span></span>
+            <h3><a class="navbar-brand" href="/bakery-page" style="margin-right: 0">ВЫПЕЧКА</a></h3>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <div class="clearfix mb-5 pb-5">
+      <div class="row" >
+        <div class="col-md-12 text-center heading-wrap">
+          <h2>Каталог</h2>
+        </div>
+      </div>
+    </div>
+
+
+  <div class="container">
+
+    <div class="row no-gutters">
+      <div class="col-md-12">
+
+      <% products.forEach(function (product, id) {%>
+          <div class="sched d-block d-lg-flex">
+            <div class="bg-image <%= id % 2 === 0 ? "order-2" : "" %>" style="background-image: url(<%= product.imageUrl %>);" data-aos="fade">
+
+            </div>
+            <div class="text <%= id % 2 === 0 ? "order-1" : "" %>">
+              <h3><%= product.name %></h3>
+              <p><%= product.restaurantId.name %></p>
+              <p class="text-primary h3"> <%= product.price %> руб.</p>
+
+            </div>
+
+          </div>
+      <%})%>
+      </div>
+
+
+    </div>
+
+  </div>
+
+<% include _footer %>
